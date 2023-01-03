@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Задание 1.
+        let num1 = prompt('Введите первое значение.');
+        let num2 = prompt('Введите второе значение.');
+        console.log(num1 <= 1);
+        console.log(num2 >= 3);
+
+        // Задание 2.
+        // let test = true;
+        // if (test === true) {
+        //     console.log('+++');
+        // } else {
+        //     console.log('---');
+        // }
+
+        let test = true;
+        (test === true) ? console.log('+++') : console.log('---');
+
+        // Задание 3.
+
+        let day = prompt('Введите число месяца от 1 до 31');
+        if (day >= 1 && day <= 10) {
+            alert('Первая декада месяца');
+        }
+        if (day >= 11 && day <= 20) {
+            alert('Вторая декада месяца');
+        }
+        if (day >= 21 && day <= 31) {
+            alert('Третья декада месяца');
+        }
+
+        // Задание 4.
+
+        let num = prompt('Введите целое положительное число');
+        units = num % 10;
+        tens = Math.floor(num / 10 % 10);
+        hundreds = Math.floor(num / 100 % 10);
+        alert(`В числе ${num} количество сотен: ${hundreds}, десятков: ${tens}, единиц: ${units}`);
+
+    </script>
+</body>
+
+</html>
