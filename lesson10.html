@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            border: none;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 19px;
+            padding: 40px 0;
+
+        }
+
+        .photo {
+            padding: 40px 0 25px 29px;
+            box-sizing: border-box;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 24px;
+            line-height: 28px;
+            margin-top: 17px;
+        }
+
+        .autor {
+            font-size: 20px;
+            margin-top: 40px;
+            max-width: 310px;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script src="json.js"></script>
+    <script>
+
+        const contBox = document.querySelector('.content');
+        const data = JSON.parse(dataInfo);
+        console.log(data);
+
+
+        data.forEach(element => {
+            const titleEl = document.createElement('h3');
+            titleEl.classList.add('title');
+            titleEl.textContent = element.quote.body;
+
+            const authorEl = document.createElement('p');
+            authorEl.classList.add('author');
+            authorEl.textContent = element.quote.author;
+
+            const imgEl = document.createElement('img');
+            imgEl.classList.add('photo');
+            imgEl.src = element.quote.photo_src;
+
+            contBox.appendChild(imgEl);
+            contBox.appendChild(titleEl);
+            contBox.appendChild(authorEl);
+
+        });
+    </script>
+
+</body>
+
+</html>
